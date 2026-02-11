@@ -49,7 +49,7 @@
                     <a href="#contato" class="brand-bg-orange text-black px-6 py-2.5 rounded-sm hover:opacity-90 transition">Orçamento</a>
                 </div>
                 <div class="md:hidden">
-                    <button class="p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+                    <button class="p-2" id="mobile-menu-btn"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
                 </div>
             </div>
         </div>
@@ -63,7 +63,6 @@
         </div>
         
         <div class="relative z-10 text-center px-4 max-w-5xl">
-            
             <h1 class="text-5xl md:text-7xl lg:text-8xl text-white mb-6 font-bold leading-none uppercase tracking-tighter">Fogo de Lenha:<br><span class="italic brand-orange serif normal-case tracking-normal">Tradição em Cada Prato.</span></h1>
             <p class="text-lg md:text-xl text-stone-300 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
                 Aqui no Fogo de Lenha, o aconchego da comida caseira te espera! Venha sentir o sabor dos nossos pratos preparados com carinho e tradição. Não perca essa experiência!
@@ -235,25 +234,16 @@
                 </div>
 
                 <div class="bg-stone-900 p-12 rounded-lg border border-stone-800 shadow-2xl">
-                    <form action="#" class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div>
-                            <input type="text" class="w-full bg-stone-800/50 border border-stone-700 rounded-sm p-4 text-white focus:brand-border-orange outline-none transition uppercase text-xs tracking-widest font-bold" placeholder="NOME COMPLETO">
+                            <input type="text" id="form-name" required class="w-full bg-stone-800/50 border border-stone-700 rounded-sm p-4 text-white focus:brand-border-orange outline-none transition uppercase text-xs tracking-widest font-bold" placeholder="NOME COMPLETO">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
-                            <input type="email" class="w-full bg-stone-800/50 border border-stone-700 rounded-sm p-4 text-white focus:brand-border-orange outline-none transition uppercase text-xs tracking-widest font-bold" placeholder="E-MAIL">
-                            <input type="tel" class="w-full bg-stone-800/50 border border-stone-700 rounded-sm p-4 text-white focus:brand-border-orange outline-none transition uppercase text-xs tracking-widest font-bold" placeholder="WHATSAPP">
+                            <input type="email" id="form-email" required class="w-full bg-stone-800/50 border border-stone-700 rounded-sm p-4 text-white focus:brand-border-orange outline-none transition uppercase text-xs tracking-widest font-bold" placeholder="E-MAIL">
+                            <input type="tel" id="form-tel" required class="w-full bg-stone-800/50 border border-stone-700 rounded-sm p-4 text-white focus:brand-border-orange outline-none transition uppercase text-xs tracking-widest font-bold" placeholder="WHATSAPP">
                         </div>
-                        <div>
-                            <select class="w-full bg-stone-800/50 border border-stone-700 rounded-sm p-4 text-black-400 focus:brand-border-orange outline-none transition uppercase text-xs font-bold tracking-widest">
-                                <option>Tipo de Serviço</option>
-                                <option>Almoço</option>
-                                <option>Jantar</option>
-                                <option>Aniversário</option>
-                                <option>Confraternização</option>
-                                <option>Evento Corporativo</option>
-                            </select>
-                        </div>
-                        <button class="w-full brand-bg-orange text-black font-bold py-5 uppercase tracking-[0.2em] text-sm hover:bg-white transition-all shadow-lg">
+                        
+                        <button type="submit" class="w-full brand-bg-orange text-black font-bold py-5 uppercase tracking-[0.2em] text-sm hover:bg-white transition-all shadow-lg">
                             Solicitar Orçamento
                         </button>
                     </form>
@@ -262,7 +252,7 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
+    <!-- footer -->
     <footer class="bg-black py-16 text-white border-t border-stone-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10">
@@ -287,6 +277,23 @@
     <a href="https://api.whatsapp.com/send?phone=554199941220&text=Olá,%20vim%20do%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-transform">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767 0 1.261.403 2.423 1.087 3.373L6.591 18l2.757-.723a5.745 5.745 0 0 0 2.683.662c3.182 0 5.767-2.587 5.767-5.768 0-3.181-2.585-5.767-5.767-5.767zm3.39 8.21c-.147.413-.85.758-1.203.803-.352.045-.78.062-1.287-.1-.302-.1-.667-.234-1.127-.433-1.963-.848-3.237-2.855-3.335-2.987-.099-.132-.821-.921-.821-1.768 0-.848.443-1.265.602-1.431.158-.165.346-.207.461-.207.115 0 .23 0 .33.005.105.005.245-.04.383.29.147.35.503 1.23.548 1.32.045.09.075.193.015.313-.06.12-.09.193-.18.297l-.271.327c-.09.105-.183.218-.08.397.103.177.457.755.979 1.222.673.6 1.24.786 1.417.874.177.087.28.075.385-.045.105-.12.443-.518.562-.693.12-.175.24-.145.405-.085.165.06 1.045.493 1.226.583s.301.135.346.21c.045.075.045.435-.102.848z"/></svg>
     </a>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const tel = document.getElementById('form-tel').value;
+            
+            const whatsappNumber = "554199941220";
+            const message = `Olá! Gostaria de solicitar um orçamento.%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*E-mail:* ${encodeURIComponent(email)}%0A*WhatsApp:* ${encodeURIComponent(tel)}`;
+            
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 
 </body>
 </html>
